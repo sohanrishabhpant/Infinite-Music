@@ -1,0 +1,27 @@
+/* Body styles */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color:black;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0vh;
+    z-index: -1;
+    height: 0;
+    width: 100%;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

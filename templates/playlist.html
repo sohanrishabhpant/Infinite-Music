@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Table</title>
+    <link rel="stylesheet" href="../static/playlist.css">
+    <link rel="stylesheet" href="../static/footer.css">
+</head>
+<body style="background-color: black;">
+    <div class="topnav">
+        <a class="inactive" href="Homepage.html">Home</a>
+        <a class="inactive" href="ArtistsPage.html">Artists Page</a>
+        <a class="inactive" href="ArtistsPage.html">Albums Page</a>
+        <a class="inactive" href="ArtistsPage.html">Songs Page</a>
+        <a class="active" href="playlist.html">Playlist</a>
+        <a class="inactive" href="search.html">Search</a>
+		<a class="inactive" href="spotlight.html">Spotlight</a>
+        <a class="inactive" href="about.html">About</a>
+        <a style="margin-left: 50%;margin-bottom: -5%;margin-top: -1.5%;" href="Homepage.html"><img
+            style="height: 82px;" src="logomalloc-removebg-preview.png"></a>
+    </div>
+    <h1 style="text-align: center;">Playlist</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Song Name</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            {% for value in row %}
+            <td>{{ value }}</td>
+            {% endfor %}
+            <td>
+                <form action="/remove" method="POST">
+                    <input type="hidden" name="row_id" value="{{ row[0] }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <footer>
+        <p>&copy; Music Alloc(). All rights reserved.</p>
+        <a href="about.html">About</a>
+    </footer>
+</body>
+</html>
